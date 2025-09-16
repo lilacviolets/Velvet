@@ -1,24 +1,18 @@
-# Velvet: A simple PowerShell Debloating Tool
+# 💻 Velvet - A PowerShell Debloating Utility
 
-This tool is still in **beta testing**. It was created for my final year IB exhibition and I'm not sure what will happen to it after the exhibition ends.
+Velvet is a simple yet effective PowerShell script designed to help you optimize and debloat your Windows system. It provides a menu-driven interface to perform several common maintenance tasks, helping to improve system performance and free up disk space.
 
-***
+---
 
-## ⚠️ WARNING
+### Key Features
 
-Please **create a system restore point** before using this tool. I am not responsible for any damage or data loss that may occur.
+* **Remove Unnecessary Apps**: Easily remove common pre-installed Windows applications, while keeping the Windows Store intact.
+* **Disable Telemetry**: Block Windows' data collection by disabling telemetry services and registry settings, enhancing your privacy.
+* **Optimize System**: Adjust system settings, such as disabling unnecessary startup programs and services, to reduce system overhead.
+* **Clean System**: Automatically clear temporary files, cache, and leftover files from old Windows updates to reclaim storage space.
 
-***
+---
 
-### Features (to be added)
+### ⚠️ Warning
 
--   Debloat Windows 10/11
--   Remove pre-installed apps
--   Improve system performance
-
-### How to use
-
-1.  Download the `velvet.ps1` script.
-2.  Open **PowerShell** as an administrator.
-3.  Navigate to the script's directory.
-4.  Run the script using the command: `./velvet.ps1`
+**Always create a system restore point before running this script.** While Velvet is designed to be safe, modifying system settings and deleting files can lead to unexpected issues. You use this tool at your own risk.
