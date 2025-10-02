@@ -9,7 +9,7 @@ Created as an educational school project to demonstrate system administration an
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This is a **student project for educational purposes**.  
 While it performs safe operations, always backup your data before running any system modification scripts.  
@@ -17,7 +17,7 @@ While it performs safe operations, always backup your data before running any sy
 
 ---
 
-## 🎯 What Does It Do?
+## What Does It Do?
 
 Velvet performs the following cleanup operations:
 
@@ -30,7 +30,7 @@ Velvet performs the following cleanup operations:
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - Windows 10 or Windows 11  
 - PowerShell 5.1 or higher  
@@ -39,7 +39,7 @@ Velvet performs the following cleanup operations:
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 ### Method 1: Download and Run
 
@@ -69,7 +69,7 @@ irm https://raw.githubusercontent.com/lilacviolets/Velvet/main/Velvet.ps1 | iex
 
 ---
 
-## 📊 What Gets Removed?
+## What Gets Removed?
 
 ### Apps Removed
 
@@ -97,7 +97,7 @@ irm https://raw.githubusercontent.com/lilacviolets/Velvet/main/Velvet.ps1 | iex
 
 ---
 
-## 🔄 How to Undo Changes
+## How to Undo Changes
 
 If you experience any issues after running Velvet:
 
@@ -119,7 +119,7 @@ If you experience any issues after running Velvet:
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 ### Is this safe to use?
 
@@ -151,7 +151,7 @@ Yes, Windows Update functions normally after running this script.
 
 ---
 
-## 🔧 Customization
+## Customization
 
 To customize which apps are removed, edit the `$bloatware` array around **line 47**:
 
@@ -209,7 +209,7 @@ Created by **[lilacviolets]** as a school project to learn about Windows system 
 ## 🙏 Acknowledgments
 
 - Inspired by various Windows debloating tools  
-- Thanks to teachers and classmates for feedback  
+- Thanks to my teacher and a few of my classmates
 - Community contributors  
 
 ---
