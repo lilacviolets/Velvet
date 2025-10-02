@@ -202,7 +202,7 @@ Feel free to:
 
 ## 👨‍💻 Author
 
-Created by **[Your Name]** as a school project to learn about Windows system administration and PowerShell scripting.
+Created by **[lilacviolets]** as a school project to learn about Windows system administration and PowerShell scripting.
 
 ---
 
