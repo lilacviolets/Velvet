@@ -43,7 +43,7 @@ Velvet performs the following cleanup operations:
 
 ### Method 1: Download and Run
 
-1. Download `Velvet.ps1` from this repository  
+1. Download `Velvet.ps1` from this releases (https://github.com/lilacviolets/Velvet/releases/tag/1.0)  
 2. Right-click on the file and select **"Run with PowerShell"**  
 3. If prompted, click **"Yes"** to allow administrator privileges  
 4. Follow the on-screen instructions  
