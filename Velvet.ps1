@@ -1,117 +1,450 @@
-# Velvet - PowerShell Debloating Utility
+# Velvet - Simple PC Debloating Utility
+# School Project - Easy to Use!
+# Run as Administrator!
 
-# Define colors for user feedback
-$successColor = [Console]::ForegroundColor = "Green"
-$errorColor = [Console]::ForegroundColor = "Red"
-$warningColor = [Console]::ForegroundColor = "Yellow"
-$infoColor = [Console]::ForegroundColor = "Cyan"
-$resetColor = [Console]::ForegroundColor = "White"
+#Requires -RunAsAdministrator
 
-# Welcome Message
-Write-Host "Welcome to Velvet - Your PC Debloating Utility" -ForegroundColor $infoColor
-Write-Host "---------------------------------------------" -ForegroundColor $infoColor
-Write-Host "This script will help optimize and debloat your system." -ForegroundColor $resetColor
-Write-Host "Please ensure you run this script as Administrator." -ForegroundColor $warningColor
-Write-Host "Select an option to continue..." -ForegroundColor $resetColor
+# Define colors
+$successColor = "Green"
+$errorColor = "Red"
+$warningColor = "Yellow"
+$infoColor = "Cyan"
+$resetColor = "White"
 
-# Display Menu
-function Display-Menu {
-    Write-Host "1. Remove Unnecessary Apps" -ForegroundColor $warningColor
-    Write-Host "2. Disable Telemetry & Background Services" -ForegroundColor $warningColor
-    Write-Host "3. Optimize System Settings" -ForegroundColor $warningColor
-    Write-Host "4. Clean up System (Temporary Files, Cache)" -ForegroundColor $warningColor
-    Write-Host "5. Exit" -ForegroundColor $warningColor
-}
-
-# Action to remove unnecessary apps
-function Remove-Apps {
-    Write-Host "Removing unnecessary apps..." -ForegroundColor $warningColor
-    try {
-        # Remove common pre-installed apps (excluding Windows Store)
-        Get-AppxPackage | where {$_.Name -notlike "*Microsoft.WindowsStore*"} | Remove-AppxPackage
-        Write-Host "Unnecessary apps removed successfully." -ForegroundColor $successColor
-    } catch {
-        Write-Host "Error: Failed to remove apps. Ensure you are running the script as Administrator." -ForegroundColor $errorColor
+# Windows-style loading animation with moving dots
+function Show-LoadingAnimation {
+    param([string]$message, [int]$duration = 3)
+    
+    $endTime = (Get-Date).AddSeconds($duration)
+    $dotCount = 0
+    $maxDots = 5
+    
+    while ((Get-Date) -lt $endTime) {
+        $dots = "." * $dotCount
+        $spaces = " " * ($maxDots - $dotCount)
+        Write-Host "`r$message$dots$spaces" -NoNewline -ForegroundColor $infoColor
+        Start-Sleep -Milliseconds 400
+        $dotCount++
+        if ($dotCount -gt $maxDots) { $dotCount = 0 }
     }
+    Write-Host "`r$message - Complete!     " -ForegroundColor $successColor
 }
 
-# Action to disable telemetry and unnecessary services
-function Disable-Telemetry {
-    Write-Host "Disabling telemetry and background services..." -ForegroundColor $warningColor
-    try {
-        # Disable Windows Telemetry
-        Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 0
-        # Disable background services (Example: DiagTrack, which is the Microsoft Compatibility Telemetry service)
-        Stop-Service -Name "DiagTrack" -Force
-        Set-Service -Name "DiagTrack" -StartupType Disabled
-        Write-Host "Telemetry and background services disabled." -ForegroundColor $successColor
-    } catch {
-        Write-Host "Error: Failed to disable telemetry." -ForegroundColor $errorColor
-    }
-}
-
-# Action to optimize system settings
-function Optimize-System {
-    Write-Host "Optimizing system settings..." -ForegroundColor $warningColor
-    try {
-        # Disable OneDrive (Example of disabling startup items)
-        Stop-Process -Name "OneDrive" -Force
-        Set-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive" -Name "UserLoggedIn" -Value 0
-        Set-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive" -Name "HomeUserUpn" -Value ""
+# Progress bar animation
+function Show-ProgressBar {
+    param([string]$activity)
+    
+    Write-Host "`n$activity" -ForegroundColor $infoColor
+    $progressChars = @("▱", "▰")
+    
+    for ($i = 0; $i -le 20; $i++) {
+        $percent = ($i / 20) * 100
+        $bar = ""
         
-        # Example of disabling Windows Defender real-time protection (be cautious with this)
-        Set-MpPreference -DisableRealtimeMonitoring $true
-        Write-Host "System optimized successfully." -ForegroundColor $successColor
-    } catch {
-        Write-Host "Error: Failed to optimize system settings." -ForegroundColor $errorColor
+        for ($j = 0; $j -lt 20; $j++) {
+            if ($j -lt $i) {
+                $bar += $progressChars[1]
+            } else {
+                $bar += $progressChars[0]
+            }
+        }
+        
+        Write-Host "`r[$bar] $([math]::Round($percent))%" -NoNewline -ForegroundColor $infoColor
+        Start-Sleep -Milliseconds 50
+    }
+    
+    Write-Host "`r[████████████████████] 100% ✓" -ForegroundColor $successColor
+}
+
+# Sparkle effect
+function Show-Sparkles {
+    param([string]$text)
+    
+    $sparkles = @("✨", "⭐", "🌟", "💫", "✨")
+    
+    for ($i = 0; $i -lt 5; $i++) {
+        Clear-Host
+        Write-Host "`n`n`n" -NoNewline
+        Write-Host "        $($sparkles[$i]) " -NoNewline -ForegroundColor Yellow
+        Write-Host $text -NoNewline -ForegroundColor $infoColor
+        Write-Host " $($sparkles[4-$i])" -ForegroundColor Yellow
+        Start-Sleep -Milliseconds 300
     }
 }
 
-# Clean up temporary files, cache, and Windows update leftovers
-function Clean-System {
-    Write-Host "Cleaning system temporary files and cache..." -ForegroundColor $warningColor
+# Typewriter effect
+function Show-TypeWriter {
+    param([string]$text, [int]$speed = 30)
+    
+    foreach ($char in $text.ToCharArray()) {
+        Write-Host $char -NoNewline -ForegroundColor $infoColor
+        Start-Sleep -Milliseconds $speed
+    }
+    Write-Host ""
+}
+
+# Success celebration
+function Show-Celebration {
+    Clear-Host
+    Write-Host "`n`n`n"
+    Write-Host "        ╔═══════════════════════════════════╗" -ForegroundColor $successColor
+    Write-Host "        ║                                   ║" -ForegroundColor $successColor
+    Write-Host "        ║         🎉 ALL DONE! 🎉          ║" -ForegroundColor $successColor
+    Write-Host "        ║                                   ║" -ForegroundColor $successColor
+    Write-Host "        ║   Your PC is now optimized and   ║" -ForegroundColor $successColor
+    Write-Host "        ║        running faster!            ║" -ForegroundColor $successColor
+    Write-Host "        ║                                   ║" -ForegroundColor $successColor
+    Write-Host "        ╚═══════════════════════════════════╝" -ForegroundColor $successColor
+    Write-Host "`n"
+    
+    # Bouncing effect
+    for ($i = 0; $i -lt 3; $i++) {
+        Start-Sleep -Milliseconds 200
+        Write-Host "                    ⬆️ ⬆️ ⬆️" -ForegroundColor Yellow
+        Start-Sleep -Milliseconds 200
+        Write-Host "`r                    ⬇️ ⬇️ ⬇️" -ForegroundColor Yellow -NoNewline
+    }
+    Write-Host "`n"
+}
+
+# Function to create system restore point (silent in background)
+function Create-RestorePoint {
     try {
-        # Clear system temp files
-        Remove-Item -Path "$env:TEMP\*" -Recurse -Force
-        Remove-Item -Path "$env:SystemRoot\Temp\*" -Recurse -Force
-
-        # Clean up Windows Update leftovers
-        Remove-Item -Path "C:\Windows\SoftwareDistribution\Download\*" -Recurse -Force
-        Write-Host "System cleaned successfully." -ForegroundColor $successColor
+        Enable-ComputerRestore -Drive "$env:SystemDrive\" -ErrorAction SilentlyContinue
+        $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm"
+        Checkpoint-Computer -Description "Velvet_Backup_$timestamp" -RestorePointType "MODIFY_SETTINGS" -ErrorAction SilentlyContinue
+        return $true
     } catch {
-        Write-Host "Error: Failed to clean system." -ForegroundColor $errorColor
+        return $false
     }
 }
 
-# Main logic to select options
-do {
-    Display-Menu
-    $userChoice = Read-Host "Enter the number of your choice"
-
-    switch ($userChoice) {
-        1 {
-            Remove-Apps
+# Preset Configurations
+function Get-PresetConfig {
+    param([string]$preset)
+    
+    $configs = @{
+        "teacher" = @{
+            Name = "Teacher / Office Work"
+            RemoveApps = $true
+            RemoveOffice = $false
+            RemoveXbox = $true
+            RemoveOneDrive = $false
+            DisableTelemetry = $true
+            DisableServices = $true
+            DisableCortana = $true
+            OptimizeSystem = $true
+            CleanSystem = $true
         }
-        2 {
-            Disable-Telemetry
+        "student" = @{
+            Name = "Student"
+            RemoveApps = $true
+            RemoveOffice = $false
+            RemoveXbox = $true
+            RemoveOneDrive = $false
+            DisableTelemetry = $true
+            DisableServices = $false
+            DisableCortana = $false
+            OptimizeSystem = $true
+            CleanSystem = $true
         }
-        3 {
-            Optimize-System
+        "gamer" = @{
+            Name = "Gaming"
+            RemoveApps = $true
+            RemoveOffice = $true
+            RemoveXbox = $false
+            RemoveOneDrive = $true
+            DisableTelemetry = $true
+            DisableServices = $false
+            DisableCortana = $true
+            OptimizeSystem = $true
+            CleanSystem = $true
         }
-        4 {
-            Clean-System
+        "home" = @{
+            Name = "Home / Family PC"
+            RemoveApps = $true
+            RemoveOffice = $false
+            RemoveXbox = $true
+            RemoveOneDrive = $false
+            DisableTelemetry = $true
+            DisableServices = $false
+            DisableCortana = $false
+            OptimizeSystem = $true
+            CleanSystem = $true
         }
-        5 {
-            Write-Host "Exiting Velvet. Goodbye!" -ForegroundColor $infoColor
-            break
-        }
-        default {
-            Write-Host "Invalid choice, please try again." -ForegroundColor $errorColor
+        "maximum" = @{
+            Name = "Maximum Cleanup"
+            RemoveApps = $true
+            RemoveOffice = $true
+            RemoveXbox = $true
+            RemoveOneDrive = $true
+            DisableTelemetry = $true
+            DisableServices = $true
+            DisableCortana = $true
+            OptimizeSystem = $true
+            CleanSystem = $true
         }
     }
+    
+    return $configs[$preset]
+}
 
-    Write-Host "Would you like to perform another action? (Y/N)" -ForegroundColor $infoColor
-    $continue = Read-Host
-} while ($continue -eq "Y" -or $continue -eq "y")
+# Remove bloatware apps (silent)
+function Remove-Apps {
+    param(
+        [bool]$RemoveOffice = $true,
+        [bool]$RemoveXbox = $true
+    )
+    
+    $bloatware = @(
+        "Microsoft.BingNews", "Microsoft.BingWeather", "Microsoft.GetHelp",
+        "Microsoft.Getstarted", "Microsoft.MicrosoftSolitaireCollection",
+        "Microsoft.People", "Microsoft.WindowsAlarms", "Microsoft.WindowsCamera",
+        "Microsoft.WindowsFeedbackHub", "Microsoft.WindowsMaps", 
+        "Microsoft.YourPhone", "Microsoft.ZuneMusic", "Microsoft.ZuneVideo"
+    )
+    
+    if ($RemoveOffice) {
+        $bloatware += @("Microsoft.Office.OneNote", "Microsoft.MicrosoftOfficeHub")
+    }
+    
+    if ($RemoveXbox) {
+        $bloatware += @("Microsoft.XboxApp", "Microsoft.XboxGamingOverlay", "Microsoft.GamingApp")
+    }
+    
+    foreach ($app in $bloatware) {
+        Get-AppxPackage -Name $app -AllUsers -ErrorAction SilentlyContinue | Remove-AppxPackage -ErrorAction SilentlyContinue
+        Get-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue | Where-Object DisplayName -like $app | Remove-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue
+    }
+}
 
-Write-Host "Thank you for using Velvet!" -ForegroundColor $infoColor
+# Remove Xbox services (silent)
+function Remove-Xbox {
+    $xboxServices = @("XblAuthManager", "XblGameSave", "XboxNetApiSvc", "XboxGipSvc")
+    
+    foreach ($service in $xboxServices) {
+        Stop-Service -Name $service -Force -ErrorAction SilentlyContinue
+        Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
+    }
+}
+
+# Remove OneDrive (silent)
+function Remove-OneDrive {
+    Stop-Process -Name "OneDrive" -Force -ErrorAction SilentlyContinue
+    Start-Sleep -Seconds 1
+    
+    $onedrive = "$env:SystemRoot\SysWOW64\OneDriveSetup.exe"
+    if (!(Test-Path $onedrive)) {
+        $onedrive = "$env:SystemRoot\System32\OneDriveSetup.exe"
+    }
+    
+    if (Test-Path $onedrive) {
+        Start-Process $onedrive "/uninstall" -NoNewWindow -Wait -ErrorAction SilentlyContinue
+    }
+    
+    Remove-Item -Path "$env:USERPROFILE\OneDrive" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:LOCALAPPDATA\Microsoft\OneDrive" -Recurse -Force -ErrorAction SilentlyContinue
+    
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Force -ErrorAction SilentlyContinue | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive" -Name "DisableFileSyncNGSC" -Value 1 -ErrorAction SilentlyContinue
+}
+
+# Disable telemetry (silent)
+function Disable-Telemetry {
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Force -ErrorAction SilentlyContinue | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 0 -ErrorAction SilentlyContinue
+    
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Force -ErrorAction SilentlyContinue | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" -Name "DisabledByGroupPolicy" -Value 1 -ErrorAction SilentlyContinue
+    
+    Get-ScheduledTask -TaskPath "\Microsoft\Windows\Customer Experience Improvement Program\" -ErrorAction SilentlyContinue | Disable-ScheduledTask -ErrorAction SilentlyContinue
+    Get-ScheduledTask -TaskPath "\Microsoft\Windows\Application Experience\" -ErrorAction SilentlyContinue | Disable-ScheduledTask -ErrorAction SilentlyContinue
+}
+
+# Disable background services (silent)
+function Disable-BackgroundServices {
+    $services = @("DiagTrack", "dmwappushservice", "WerSvc")
+    
+    foreach ($service in $services) {
+        Stop-Service -Name $service -Force -ErrorAction SilentlyContinue
+        Set-Service -Name $service -StartupType Disabled -ErrorAction SilentlyContinue
+    }
+}
+
+# Optimize system (silent)
+function Optimize-System {
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Force -ErrorAction SilentlyContinue | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsConsumerFeatures" -Value 1 -ErrorAction SilentlyContinue
+    
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SilentInstalledAppsEnabled" -Value 0 -ErrorAction SilentlyContinue
+}
+
+# Clean system (silent)
+function Clean-System {
+    Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "$env:SystemRoot\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+    
+    Stop-Service -Name wuauserv -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path "C:\Windows\SoftwareDistribution\Download\*" -Recurse -Force -ErrorAction SilentlyContinue
+    Start-Service -Name wuauserv -ErrorAction SilentlyContinue
+}
+
+# Disable Cortana (silent)
+function Disable-CortanaWebSearch {
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force -ErrorAction SilentlyContinue | Out-Null
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Value 0 -ErrorAction SilentlyContinue
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "DisableWebSearch" -Value 1 -ErrorAction SilentlyContinue
+}
+
+# Apply preset with animations
+function Apply-Preset {
+    param([string]$presetName)
+    
+    $config = Get-PresetConfig $presetName
+    
+    Clear-Host
+    Show-Sparkles "Preparing Your PC Optimization"
+    Start-Sleep -Milliseconds 500
+    
+    Clear-Host
+    Write-Host "`n`n"
+    Show-TypeWriter "  Starting magic optimization for: $($config.Name)" 40
+    Write-Host "`n"
+    Start-Sleep -Milliseconds 800
+    
+    # Step 1: Safety backup
+    Show-LoadingAnimation "Creating safety backup" 2
+    Create-RestorePoint | Out-Null
+    Start-Sleep -Milliseconds 500
+    
+    # Step 2: Remove apps
+    if ($config.RemoveApps) {
+        Show-LoadingAnimation "Removing unnecessary apps" 3
+        Remove-Apps -RemoveOffice $config.RemoveOffice -RemoveXbox $config.RemoveXbox
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 3: Remove OneDrive
+    if ($config.RemoveOneDrive) {
+        Show-LoadingAnimation "Cleaning up cloud storage" 2
+        Remove-OneDrive
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 4: Disable telemetry
+    if ($config.DisableTelemetry) {
+        Show-LoadingAnimation "Enhancing your privacy" 2
+        Disable-Telemetry
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 5: Services
+    if ($config.DisableServices) {
+        Show-LoadingAnimation "Stopping background tasks" 2
+        Disable-BackgroundServices
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 6: Cortana
+    if ($config.DisableCortana) {
+        Show-LoadingAnimation "Disabling voice assistant" 2
+        Disable-CortanaWebSearch
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 7: Optimize
+    if ($config.OptimizeSystem) {
+        Show-LoadingAnimation "Optimizing system settings" 2
+        Optimize-System
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Step 8: Clean
+    if ($config.CleanSystem) {
+        Show-LoadingAnimation "Cleaning temporary files" 3
+        Clean-System
+        Start-Sleep -Milliseconds 500
+    }
+    
+    # Final progress
+    Write-Host "`n"
+    Show-ProgressBar "Finalizing optimization"
+    Start-Sleep -Milliseconds 800
+    
+    # Celebration
+    Show-Celebration
+    
+    Write-Host "        Please restart your computer" -ForegroundColor $warningColor
+    Write-Host "        to complete the optimization.`n" -ForegroundColor $warningColor
+    Write-Host "        Press Enter to exit..." -ForegroundColor $resetColor
+    Read-Host
+}
+
+# Welcome screen with animation
+Clear-Host
+Write-Host "`n`n`n"
+
+# Animated title
+$title = @(
+    "        ╔════════════════════════════════════╗",
+    "        ║                                    ║",
+    "        ║          VELVET DEBLOATER          ║",
+    "        ║     Make Your PC Faster & Cleaner  ║",
+    "        ║                                    ║",
+    "        ╚════════════════════════════════════╝"
+)
+
+foreach ($line in $title) {
+    Write-Host $line -ForegroundColor $infoColor
+    Start-Sleep -Milliseconds 100
+}
+
+Write-Host "`n"
+Start-Sleep -Milliseconds 500
+
+# Animated dots
+Write-Host "        Initializing" -NoNewline -ForegroundColor $infoColor
+for ($i = 0; $i -lt 5; $i++) {
+    Write-Host "." -NoNewline -ForegroundColor $infoColor
+    Start-Sleep -Milliseconds 200
+}
+Write-Host " Ready!`n" -ForegroundColor $successColor
+Start-Sleep -Milliseconds 800
+
+# Simple menu
+Clear-Host
+Write-Host "`n════════════════════════════════════════" -ForegroundColor $infoColor
+Write-Host "  Choose Your Computer Type:" -ForegroundColor $infoColor
+Write-Host "════════════════════════════════════════`n" -ForegroundColor $infoColor
+
+Write-Host "  1. 📚 Teacher / Office Work" -ForegroundColor $resetColor
+Write-Host "     (Keeps Office & OneDrive, removes games)`n" -ForegroundColor DarkGray
+
+Write-Host "  2. 🎓 Student" -ForegroundColor $resetColor
+Write-Host "     (Keeps everything useful for school)`n" -ForegroundColor DarkGray
+
+Write-Host "  3. 🎮 Gaming" -ForegroundColor $resetColor
+Write-Host "     (Best for games & Xbox)`n" -ForegroundColor DarkGray
+
+Write-Host "  4. 🏠 Home / Family PC" -ForegroundColor $resetColor
+Write-Host "     (Safe for everyone to use)`n" -ForegroundColor DarkGray
+
+Write-Host "  5. 🔥 Maximum Cleanup" -ForegroundColor $resetColor
+Write-Host "     (Remove as much as possible)`n" -ForegroundColor DarkGray
+
+Write-Host "════════════════════════════════════════`n" -ForegroundColor $infoColor
+
+Write-Host "Enter a number (1-5): " -ForegroundColor $warningColor -NoNewline
+$choice = Read-Host
+
+switch ($choice) {
+    1 { Apply-Preset "teacher" }
+    2 { Apply-Preset "student" }
+    3 { Apply-Preset "gamer" }
+    4 { Apply-Preset "home" }
+    5 { Apply-Preset "maximum" }
+    default {
+        Write-Host "`nInvalid choice. Please run the script again." -ForegroundColor $errorColor
+        Start-Sleep -Seconds 3
+    }
+}
