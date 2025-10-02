@@ -1,6 +1,6 @@
 # Velvet - Simple PC Cleanup Tool
 # Educational School Project - For Learning Purposes Only
-# Created by: [Your Name/Class]
+# Created by: lilacviolets!!
 # 
 # DISCLAIMER: This is a student project for educational purposes.
 # Always backup your data before running system modification scripts.
