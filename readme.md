@@ -4,7 +4,7 @@
 
 **Central Idea:** Technology can be used responsibly to solve everyday problems and help others.
 
-**Transdisciplinary Theme:**: How the World Works
+**Transdisciplinary Theme:** How the World Works
 
 **Key Concepts Explored:**
 - **Form** - Understanding how computer systems are structured
