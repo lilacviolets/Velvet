@@ -13,10 +13,9 @@
 - **Causation** - How software affects computer performance
 
 **Lines of Inquiry:**
-1. How computers store and organize information
-2. Ways technology can solve real problems
-3. The responsibility that comes with modifying systems
-4. How coding can be used to help others
+1. Developers make decisions on customers behalf
+2. Devices can be further optimised
+3. Not all software is essential for a device
 
 ### What Students Learn
 
