@@ -4,7 +4,7 @@
 
 **Central Idea:** Technology can be used responsibly to solve everyday problems and help others.
 
-**Transdisciplinary Theme:** How We Organize Ourselves / How the World Works
+**Transdisciplinary Theme:**: How the World Works
 
 **Key Concepts Explored:**
 - **Form** - Understanding how computer systems are structured
@@ -29,7 +29,7 @@ This project demonstrates:
 5. **Responsibility** - Making backups before changes
 6. **Communication** - Writing clear instructions for users
 
-### PYP Attitudes Developed
+### Attitudes Developed
 
 - **Appreciation** - Understanding technology's role in daily life
 - **Commitment** - Following through on a complex project
