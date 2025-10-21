@@ -1,0 +1,92 @@
+Velvet Action Educational License – Bloatware Edition (VAEL-2025-BLOAT)
+
+Copyright (c) 2025, lilacviolets
+
+This License governs the use, distribution, and modification of the Velvet Action software (the "Software"), a program designed to remove non-essential applications and optimize Windows systems. The Software is intended for educational, instructional, research, and responsible maintenance purposes. By using, copying, modifying, or distributing this Software, you agree to the following terms:
+
+---
+
+1. PURPOSE AND SCOPE
+   The Software is provided primarily for:
+   a) Educational use to learn about system optimization and scripting.
+   b) Demonstration of responsible software development practices.
+   c) Safe removal of non-essential applications and services for learning or maintenance purposes.
+
+2. USER RESPONSIBILITY
+   Users are fully responsible for:
+   a) Any changes made to their systems.
+   b) Data loss, software conflicts, or hardware issues.
+   c) Ensuring proper backups or restore points before use.
+
+3. SAFETY REQUIREMENTS
+   a) Always create a system restore point or backup before running the Software.
+   b) Only use the Software on devices you have permission to modify.
+   c) Adult or teacher supervision is strongly recommended for minors or inexperienced users.
+
+4. LIABILITY DISCLAIMER
+   To the maximum extent allowed by Victorian, Australian, and international law:
+   a) The Software is provided “as-is” without warranties.
+   b) The copyright holder or contributors are not responsible for damages, including but not limited to:
+      - Loss of data or files
+      - System instability
+      - Hardware or software failure
+      - Financial loss or interruption of work
+
+5. MODIFICATION AND REDISTRIBUTION
+   a) You may modify, adapt, and redistribute the Software for educational or non-commercial purposes.
+   b) Redistribution must:
+      - Include this License.
+      - Retain all copyright and authorship notices.
+      - Clearly indicate any modifications made.
+   c) Commercial use requires explicit written permission.
+
+6. ETHICAL USE
+   The Software may not be used to:
+   a) Access unauthorized systems or networks.
+   b) Delete critical system files or programs without consent.
+   c) Breach privacy, security, or applicable laws.
+
+7. SYSTEM MODIFICATIONS PERMITTED
+   The Software may:
+   a) Remove or disable non-essential applications (bloatware).
+   b) Stop or disable background services not required for core system functionality.
+   c) Clean temporary, cached, or unnecessary system files.
+   d) Adjust privacy and telemetry settings for learning or demonstration purposes.
+
+8. REVERSIBILITY
+   Users must understand that changes made by the Software can be reversed by:
+   a) Using built-in system restore points.
+   b) Reinstalling removed applications from official sources.
+   c) Following documented undo instructions provided with the Software.
+
+9. AUSTRALIAN LAW COMPLIANCE
+   This License is governed by the laws of the State of Victoria, Australia. Users agree to comply with all local laws regarding software modification, system access, and privacy.
+
+10. INTERNATIONAL COMPLIANCE
+    Users outside Australia must comply with local regulations concerning software modification, privacy, and educational use.
+
+11. TEACHER AND INSTITUTIONAL GUIDANCE
+    Educational institutions should:
+    a) Review the Software before allowing students to use it.
+    b) Ensure students understand risks and proper backup procedures.
+    c) Supervise or guide usage in classroom or lab environments.
+
+12. CONTRIBUTIONS AND COMMUNITY USE
+    a) Users are encouraged to contribute improvements or report issues.
+    b) Contributions must comply with responsible, educational use principles.
+
+13. TERMINATION OF RIGHTS
+    Violation of ethical, legal, or educational terms may result in immediate termination of the rights granted under this License.
+
+14. ACKNOWLEDGEMENT
+    By using this Software, you acknowledge:
+    a) It may alter system performance.
+    b) It is intended for educational and responsible bloatware removal.
+    c) You assume full risk for use and modifications.
+
+15. ACCEPTANCE
+    Use, copying, modification, or distribution constitutes acceptance of this License. If you do not agree, you must cease all use immediately and delete all copies.
+
+---
+
+BY USING THIS SOFTWARE, YOU AGREE THAT YOU ARE USING IT RESPONSIBLY, FOR EDUCATIONAL PURPOSES, AND THAT YOU ACCEPT FULL LIABILITY FOR ANY CONSEQUENCES. THE COPYRIGHT HOLDER AND CONTRIBUTORS SHALL NOT BE HELD RESPONSIBLE FOR ANY DAMAGE, LOSS, OR HARM RESULTING FROM THE SOFTWARE.
