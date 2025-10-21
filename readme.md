@@ -416,6 +416,4 @@ Full license text: https://opensource.org/licenses/MIT
 
 ---
 
-If this helped you learn something new, give it a star on GitHub!
-
-**[STAR THIS PROJECT]** https://github.com/lilacviolets/Velvet
+If this helped you learn something new, give it a star.
