@@ -10,7 +10,7 @@
 
 Write-Host "`n================================" -ForegroundColor Cyan
 Write-Host "     VELVET PC CLEANUP" -ForegroundColor Cyan
-Write-Host "     School Project 2024" -ForegroundColor Cyan
+Write-Host "     School Project 2025 Exhibition" -ForegroundColor Cyan
 Write-Host "================================`n" -ForegroundColor Cyan
 
 Write-Host "This script will:" -ForegroundColor White
