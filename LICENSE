@@ -1,28 +1,60 @@
-BSD 3-Clause License
+Velvet Action Educational License (VAEL-2025)
 
-Copyright (c) 2025, lilac
+Copyright (c) 2025, lilacviolets
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+“The creation and distribution of this software is an educational action.  
+It is designed for learning, exploration, and responsible experimentation.  
+Use it to learn, to teach, and to improve systems, but always act responsibly.”
 
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, merge, publish, distribute, and/or study the Software, subject
+to the following conditions:
 
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
+1. EDUCATIONAL PURPOSE ONLY: This Software is provided for educational, 
+   instructional, or research purposes. Any use outside these contexts is
+   discouraged and done at the user’s own discretion.
 
-3. Neither the name of the copyright holder nor the names of its
-   contributors may be used to endorse or promote products derived from
-   this software without specific prior written permission.
+2. USER RESPONSIBILITY: Users are solely responsible for all actions taken
+   using this Software, including any changes made to computers, devices, or
+   data.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+3. NO LIABILITY: The author, contributors, or distributors of this Software
+   are not responsible for any damage, loss of data, system failure, or
+   other issues that may result from its use. Users assume all risk.
+
+4. BACKUP RECOMMENDATION: Users must create backups, restore points, or
+   other recovery options before running the Software. Failure to do so is at
+   the user’s risk.
+
+5. RESTRICTED COMMERCIAL USE: Redistribution for commercial purposes is
+   allowed only if accompanied by attribution to the original author. Selling
+   the Software as-is is not permitted without written permission.
+
+6. ETHICAL USE: Users agree not to use this Software to intentionally harm
+   others, steal data, disrupt networks, or perform malicious activities.
+
+7. MODIFICATION & SHARING: Users may modify the Software for learning,
+   experimentation, or research, and may redistribute modifications under the
+   same educational and responsible-use principles.
+
+8. NOTICE RETENTION: Redistributions in source or binary form must retain
+   this license, the copyright notice, and all disclaimers.
+
+9. ACKNOWLEDGEMENT OF RISKS: Users acknowledge that system behavior may
+   change, that temporary files may be removed, and that non-essential apps
+   may be uninstalled. These are intended effects of the Software.
+
+10. SUPPORT DISCLAIMER: No support, maintenance, or updates are guaranteed
+    by the author. Any support provided is voluntary.
+
+11. OPEN KNOWLEDGE PRINCIPLE: Users are encouraged to share findings, 
+    improvements, or educational modifications with the community.
+
+12. NO WARRANTY: THE SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. USE AT YOUR OWN RISK.
+
+BY USING THIS SOFTWARE, YOU AGREE TO THE ABOVE TERMS AND ACKNOWLEDGE THAT
+YOU ARE USING IT FOR EDUCATIONAL PURPOSES ONLY AND ACCEPT FULL RESPONSIBILITY
+FOR ANY OUTCOME RESULTING FROM ITS USE.
