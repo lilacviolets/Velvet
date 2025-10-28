@@ -1,37 +1,40 @@
-# ╔═ VELVET OPTIMIZER v3.0 ═╗
 
-*Simple Windows Cleaner & Booster*
+# ╔═ VELVET OPTIMIZER v3.1 ═╗
 
-**Version:** 3.0
+*Light Windows Debloater for Students & Teachers*
+
+**Version:** 3.1
 **Works on:** Windows 10 & 11
 **Made for:** Students and teachers
 
 ## ╔═ What Velvet Optimizer Does ═╗
 
-Velvet Optimizer helps your PC **run faster, cleaner, and smoother**:
+Velvet Optimizer helps your PC **run faster and cleaner**:
 
-* Removes temporary files and caches
-* Cleans unnecessary apps (bloatware)
-* Speeds up startup and apps
+* Removes unnecessary preinstalled apps (bloatware)
+* Keeps essential apps: Teams, OneDrive, Office
+* Cleans temporary files and thumbnails
+* Speeds up startup and app launches
 * Optimizes memory and CPU usage
-* Frees up storage space
 
-> Quick, safe, and easy — no tech skills needed.
+> Safe, minimal, and easy — no tech skills needed.
 
 ## ╔═ Features Overview ═╗
 
-| Feature                 | What It Does                 | Benefit              |
-| ----------------------- | ---------------------------- | -------------------- |
-| System Restore Point    | Backup before changes        | Safe rollback        |
-| App Cleanup             | Removes unnecessary apps     | Frees space          |
-| Temp Files Cleanup      | Deletes temporary files      | Frees storage        |
-| Thumbnail Cache Cleanup | Clears cached previews       | Faster browsing      |
-| Windows Update Cache    | Removes old update files     | Saves storage        |
-| System Logs Cleanup     | Cleans old logs              | Frees space          |
-| Startup Optimization    | Reduces boot delay           | Faster startup       |
-| Performance Mode        | Prioritizes important apps   | Smoother performance |
-| Browser Cache Cleanup   | Clears Chrome, Edge, Firefox | Faster browsing      |
-| Storage Sense           | Automates junk cleanup       | Keeps system tidy    |
+| Feature                 | What It Does                              | Benefit                           |
+| ----------------------- | ----------------------------------------- | --------------------------------- |
+| System Restore Point    | Creates a backup before changes           | Safe rollback                     |
+| App Cleanup             | Removes non-educational preinstalled apps | Frees space, reduces distractions |
+| Temp Files Cleanup      | Deletes temporary files                   | Frees storage                     |
+| Thumbnail Cache Cleanup | Clears cached previews                    | Faster browsing                   |
+| Windows Update Cache    | Removes outdated update files             | Saves storage                     |
+| System Logs Cleanup     | Cleans old logs                           | Frees space                       |
+| Startup Optimization    | Reduces boot delay                        | Faster startup                    |
+| Performance Mode        | Prioritizes important apps                | Smoother performance              |
+| Browser Cache Cleanup   | Clears Chrome, Edge, Firefox              | Faster browsing                   |
+| Storage Sense           | Automates junk cleanup                    | Keeps system tidy                 |
+| Safe Dry-Run            | Shows candidates before removal           | You stay in control               |
+| Bloatware Info          | Explains what will be removed             | Informed choices                  |
 
 ## ╔═ How to Use ═╗
 
@@ -39,36 +42,42 @@ Velvet Optimizer helps your PC **run faster, cleaner, and smoother**:
 
    * Right-click → "Run as administrator"
 
-2. Confirm
+2. Dry-Run Scan
 
-   * Type YES when asked
+   * See which apps can be safely removed
 
-3. Let it work
+3. Confirm Removal
 
-   * Automatic, no extra clicks
+   * Type YES to remove selected apps
 
-4. Restart
+4. Final Cleanup
 
-   * Your PC is faster and cleaner
+   * Temporary files and thumbnail cache cleared
+
+5. Restart PC
+
+   * Changes take full effect
 
 ## ╔═ What You’ll Notice ═╗
 
-* Faster startup
-* Apps open quickly
-* Smoother performance
+* Faster Windows startup
+* Cleaner, lighter system
 * More free space
-* Less lag
+* Fewer distractions from unnecessary apps
 
 ## ╔═ Safety ═╗
 
-* Uses only Windows built-in tools
-* Reversible with restore point
+* Creates a system restore point
+* Uses only safe, built-in Windows tools
+* Essential apps (Teams, Office, OneDrive) are kept
+* Dry-run shows candidates first
 * Works offline
 * No personal data collected
 
-## ╔═ Tips ═╗
+## ╔═ Tips for Teachers & Students ═╗
 
-* Run regularly to keep your PC fast
+* Run after first setup of a new PC or imaging
+* Keep Teams, OneDrive, Office for learning
+* Use the dry-run to check apps before removal
 * Close apps before running for best results
-* Always make a restore point before major updates
 
