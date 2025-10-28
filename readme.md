@@ -1,85 +1,74 @@
 # ╔═ VELVET OPTIMIZER v3.0 ═╗
-*Ultimate Safe Windows Optimization Suite*
 
-**Version:** 3.0  
-**Compatible:** Windows 10 & 11  
-**Designed for:** Everyone, no tech skills required
+*Simple Windows Cleaner & Booster*
 
----
+**Version:** 3.0
+**Works on:** Windows 10 & 11
+**Made for:** Students and teachers
 
 ## ╔═ What Velvet Optimizer Does ═╗
 
-Velvet Optimizer is like giving your PC a **supercharged clean-up and tune-up**. It:
+Velvet Optimizer helps your PC **run faster, cleaner, and smoother**:
 
-- Deletes unnecessary files and caches
-- Speeds up Windows startup and app launches
-- Optimizes CPU, GPU, and memory usage
-- Cleans system logs and temporary files
-- Improves visual performance and reduces lag
+* Removes temporary files and caches
+* Cleans unnecessary apps (bloatware)
+* Speeds up startup and apps
+* Optimizes memory and CPU usage
+* Frees up storage space
 
-> Your computer will feel like new again — faster, smoother, lighter.
-
----
+> Quick, safe, and easy — no tech skills needed.
 
 ## ╔═ Features Overview ═╗
 
-| Feature                     | What It Does                                                | Benefit                  |
-|-------------------------------|------------------------------------------------------------|-------------------------|
-| System Restore Point           | Makes a backup before changes                               | Safe rollback           |
-| Temp Files Cleanup             | Deletes old temp files                                      | Frees up storage        |
-| Prefetch Cache                 | Optimizes Windows prefetch                                  | Faster app launches     |
-| Recycle Bin Cleanup            | Empties deleted files                                       | More free space         |
-| Windows Update Cache           | Removes outdated update files                                | Saves storage & speeds updates |
-| System Logs Cleanup            | Cleans old logs                                             | Frees up space          |
-| Browser Cache Cleanup          | Chrome, Edge, Firefox                                       | Browsers feel faster    |
-| Thumbnail Cache Cleanup        | Clears cached previews                                      | Snappier file previews  |
-| Storage Sense                  | Automates junk cleanup                                      | Keeps system clean      |
-| High Performance Mode          | Boosts CPU & GPU                                           | Maximum speed           |
-| Visual Effects Optimization    | Reduces unnecessary visual effects                          | Faster UI               |
-| Startup Delay Removal          | Eliminates Windows boot delay                                | Faster startup          |
-| USB Performance Boost          | Keeps USB devices fast                                      | Smoother peripheral use |
-| Processor Scheduling           | Prioritizes important apps                                   | Better performance      |
-| Disk Cleanup                   | Runs Windows built-in cleanup tools                           | Frees more space        |
-
----
+| Feature                 | What It Does                 | Benefit              |
+| ----------------------- | ---------------------------- | -------------------- |
+| System Restore Point    | Backup before changes        | Safe rollback        |
+| App Cleanup             | Removes unnecessary apps     | Frees space          |
+| Temp Files Cleanup      | Deletes temporary files      | Frees storage        |
+| Thumbnail Cache Cleanup | Clears cached previews       | Faster browsing      |
+| Windows Update Cache    | Removes old update files     | Saves storage        |
+| System Logs Cleanup     | Cleans old logs              | Frees space          |
+| Startup Optimization    | Reduces boot delay           | Faster startup       |
+| Performance Mode        | Prioritizes important apps   | Smoother performance |
+| Browser Cache Cleanup   | Clears Chrome, Edge, Firefox | Faster browsing      |
+| Storage Sense           | Automates junk cleanup       | Keeps system tidy    |
 
 ## ╔═ How to Use ═╗
 
-1. Run as Administrator  
-   - Right-click file → "Run as administrator"  
+1. Run as Administrator
 
-2. Confirm  
-   - Type YES when asked  
+   * Right-click → "Run as administrator"
 
-3. Watch it Optimize  
-   - Automatic steps, no clicks needed  
+2. Confirm
 
-4. Restart your PC  
-   - Full speed unlocked  
+   * Type YES when asked
 
----
+3. Let it work
+
+   * Automatic, no extra clicks
+
+4. Restart
+
+   * Your PC is faster and cleaner
 
 ## ╔═ What You’ll Notice ═╗
 
-- Faster Windows startup  
-- Apps open almost instantly  
-- Games feel smoother  
-- More free space  
-- Less lag switching apps  
-
----
+* Faster startup
+* Apps open quickly
+* Smoother performance
+* More free space
+* Less lag
 
 ## ╔═ Safety ═╗
 
-- 100% safe (uses Windows built-in tools only)  
-- Reversible via restore point  
-- Works offline  
-- No personal data collected  
-
----
+* Uses only Windows built-in tools
+* Reversible with restore point
+* Works offline
+* No personal data collected
 
 ## ╔═ Tips ═╗
 
-- Run Velvet Optimizer regularly to keep your PC fast  
-- Close unnecessary apps before running for best results  
-- Always make a restore point before major updates  
+* Run regularly to keep your PC fast
+* Close apps before running for best results
+* Always make a restore point before major updates
+
